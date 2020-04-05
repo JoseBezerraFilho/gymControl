@@ -1,0 +1,24 @@
+  
+{% block content %}
+  
+
+  <section id="section" class="course-name">
+    
+   
+    <div id="{{course.id}}" class= "course">
+
+      <div class="card_course-container">
+        <iframe src="https://rocketseat.com.br/{{course.id}}" target="_blank" frameborder style="
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;">
+        </iframe>
+      </div>
+
+   
+    </div>
+  
+  </section>
+{# 
+   <iframe src="https://rocketseat.com.br/{{course.id}}" target="_blank" frameborder="0"></iframe> #}
+    
+{% endblock %}
