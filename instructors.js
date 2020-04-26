@@ -12,16 +12,16 @@ exports.show = function(req, res) {
   })
 
   
-
   const  instructor = {
     ...foundInstructor, // espalhamento da variável
     birth: age(foundInstructor.birth),
     services: foundInstructor.services.split(','),
     created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
   }
-
+  
   if (!foundInstructor) return res.send('Instrutor não localizado!')
   return res.render('instructors/show', {instructor})
+  
 }
 
 
@@ -64,4 +64,17 @@ exports.post = function(req, res) {
   })
 
   // return res.send(req.body)
+}
+
+//edit
+exports.edit = function(req, res) {
+  const {id} = req.params //desestruturando o req.params
+  
+  const foundInstructor = data.instructors.find(function(instructor){
+    return instructor.id == id
+  })
+
+  if (!foundInstructor) return res.send('Instrutor não localizado!')
+
+  return res.render('instructors/edit', {instructor: foundInstructor})
 }

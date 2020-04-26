@@ -1,29 +1,11 @@
 {
   "instructors": [
     {
-      "id": 1,
-      "avatar_url": "http://google.com",
-      "name": "jailhe",
-      "birth": 2081289600000,
-      "gender": "M",
-      "services": "Natação",
-      "created_at": 1587298368775
-    },
-    {
-      "id": 2,
-      "avatar_url": "http://google.com",
-      "name": "jailheminau",
-      "birth": 1739232000000,
-      "gender": "M",
-      "services": "Natação, Futebol",
-      "created_at": 1587298406844
-    },
-    {
       "id": 3,
-      "avatar_url": "http://sddfdfd",
+      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
       "name": "José",
       "birth": 246844800000,
-      "gender": "F",
+      "gender": "M",
       "services": "Natação, Futebol, Musculação",
       "created_at": 1587843032420
     },
@@ -50,7 +32,7 @@
       "avatar_url": "http://google.com",
       "name": "jailheminau",
       "birth": 225936000000,
-      "gender": "M",
+      "gender": "F",
       "services": "ddfddfdf",
       "created_at": 1587857526226
     }
