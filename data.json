@@ -1,40 +1,23 @@
 {
+  "members": [],
   "instructors": [
     {
-      "id": 3,
-      "avatar_url": "https://source.unsplash.com/collection/3465564/500x500",
-      "name": "José",
+      "id": 1,
+      "avatar_url": "https://images.unsplash.com/photo-1577221084712-45b0445d2b00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=643&q=80",
+      "name": "José Bezerra ",
       "birth": 246844800000,
       "gender": "M",
       "services": "Natação, Futebol, Musculação",
       "created_at": 1587843032420
     },
     {
-      "id": 4,
-      "avatar_url": "http://google.com",
-      "name": "José Bezerra ",
-      "birth": 246844800000,
-      "gender": "M",
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      "name": "Patrícia Cavalcante",
+      "birth": 81734400000,
+      "gender": "F",
       "services": "Natação, Funcional",
       "created_at": 1587857331416
-    },
-    {
-      "id": 5,
-      "avatar_url": "http://sddfdfd",
-      "name": "Jose S",
-      "birth": -675216000000,
-      "gender": "M",
-      "services": "Matemática",
-      "created_at": 1587857464056
-    },
-    {
-      "id": 6,
-      "avatar_url": "http://google.com",
-      "name": "jailheminau",
-      "birth": 225936000000,
-      "gender": "F",
-      "services": "ddfddfdf",
-      "created_at": 1587857526226
     }
   ]
 }

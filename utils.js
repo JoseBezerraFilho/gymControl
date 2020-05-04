@@ -10,5 +10,23 @@ module.exports = {
       age = age - 1
     }
     return age
+  },
+
+  date: function(timestamp){ // o html só reconhece data no formato yyyy/mm/dd
+    const date = new Date(timestamp)
+    
+    // yyyy 
+    const year = date.getUTCFullYear()
+
+    // mm
+    const month = `0${date.getUTCMonth() + 1}`.slice(-2) // meses são contados de 0 a 11.
+
+    // dd
+    const day = `0${date.getUTCDate()}`.slice(-2)
+    
+    //return yyyy-mm-dd
+
+    return `${year}-${month}-${day}`
+
   }
 }
