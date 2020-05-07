@@ -11,27 +11,6 @@ exports.index = function(req, res) {
 }
 
 
-//show
-exports.show = function(req, res) {
-  const {id} = req.params //desestruturando o req.params
-  
-  const foundInstructor = data.instructors.find(function(instructor){
-    return instructor.id == id
-  })
-
-  if (!foundInstructor) return res.send('Instrutor não localizado!')
-  
-  const instructor = {
-    ...foundInstructor, // espalhamento da variável
-    birth: age(foundInstructor.birth),
-    services: foundInstructor.services.split(','),
-    created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
-  }
-  
-  return res.render('instructors/show', {instructor})
-
-}
-
 exports.create = (req, res) => {
   return res.render('instructors/create')
 }
@@ -77,6 +56,27 @@ exports.post = function(req, res) {
   // return res.send(req.body)
 }
 
+//show
+exports.show = function(req, res) {
+  const {id} = req.params //desestruturando o req.params
+  
+  const foundInstructor = data.instructors.find(function(instructor){
+    return instructor.id == id
+  })
+
+  if (!foundInstructor) return res.send('Instrutor não localizado!')
+  
+  const instructor = {
+    ...foundInstructor, // espalhamento da variável
+    birth: age(foundInstructor.birth),
+    services: foundInstructor.services.split(','),
+    created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at)
+  }
+  
+  return res.render('instructors/show', {instructor})
+
+}
+
 //edit
 exports.edit = function(req, res) {
   const {id} = req.params //desestruturando o req.params
@@ -89,7 +89,7 @@ exports.edit = function(req, res) {
 
   const instructor = {
     ...foundInstructor,
-    birth: date(foundInstructor.birth)
+    birth: date(foundInstructor.birth).iso
   }
 
   return res.render('instructors/edit', {instructor})
@@ -147,3 +147,4 @@ exports.delete = function(req, res) {
   })
 
 }
+

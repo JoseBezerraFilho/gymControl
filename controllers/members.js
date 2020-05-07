@@ -10,26 +10,6 @@ exports.index = function(req, res) {
   return res.render('members/index', {members: data.members})
 }
 
-
-//show
-exports.show = function(req, res) {
-  const {id} = req.params //desestruturando o req.params
-  
-  const foundMember = data.members.find(function(member){
-    return member.id == id
-  })
-
-  if (!foundMember) return res.send('Instrutor não localizado!')
-  
-  const member = {
-    ...foundMember, // espalhamento da variável
-    birth: age(foundMember.birth),
-  }
-  
-  return res.render('members/show', {member})
-
-}
-
 //create
 exports.create = (req, res) => {
   return res.render('members/create')
@@ -50,21 +30,21 @@ exports.post = function(req, res) {
   }
 
   
-  let {avatar_url, birth, name, services, gender} = req.body
-  birth = Date.parse(birth)
-  const created_at = Date.now()
-  const id = Number(data.members.length + 1)
+  birth = Date.parse(req.body.birth)
+  // const id = Number(data.members.length + 1) => corrigindo o id
+  
+  let id = 1
+  const lastMember = data.members[data.members.lenght - 1]
+  if (lastMember) {
+    id = lastMember + 1
+  }
   
   // desestruturando o req.body
   
   data.members.push({
+    ...req.body,
     id,
-    avatar_url,
-    name,
-    birth,
-    gender,
-    services,
-    created_at,
+    birth
   })
     
 
@@ -76,6 +56,27 @@ exports.post = function(req, res) {
 
   // return res.send(req.body)
 }
+
+
+//show
+exports.show = function(req, res) {
+  const {id} = req.params //desestruturando o req.params
+  
+  const foundMember = data.members.find(function(member){
+    return member.id == id
+  })
+
+  if (!foundMember) return res.send('Instrutor não localizado!')
+  
+  const member = {
+    ...foundMember, // espalhamento da variável
+    birth: date(foundMember.birth).birthDay
+  }
+  
+  return res.render('members/show', {member})
+
+}
+
 
 //edit
 exports.edit = function(req, res) {
@@ -90,7 +91,7 @@ exports.edit = function(req, res) {
 
   const member = {
     ...foundMember,
-    birth: date(foundMember.birth)
+    birth: date(foundMember.birth).iso
   }
 
   return res.render('members/edit', {member})
@@ -150,3 +151,5 @@ exports.delete = function(req, res) {
   })
 
 }
+
+
